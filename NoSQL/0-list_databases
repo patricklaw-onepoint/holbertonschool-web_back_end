@@ -1,0 +1,3 @@
+// lists all databases in MongoDB
+// https://www.mongodb.com/developer/products/mongodb/cheat-sheet/
+show dbs;
