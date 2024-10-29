@@ -3,7 +3,9 @@
 
 
 def top_students(mongo_collection):
-    # Aggregate pipeline to calculate average score and sort students
+    """
+    Python function that returns all students sorted by average score:
+    """
     pipeline = [
         {"$addFields": {"averageScore": {"$avg": "$topics.score"}}},
         {"$sort": {"averageScore": -1}},

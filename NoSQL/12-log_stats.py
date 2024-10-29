@@ -2,8 +2,11 @@
 """ NoSQL using PyMongo """
 from pymongo import MongoClient
 
-if __name__ == "__main__":
-    """provides some stats about Nginx logs stored in MongoDB"""
+
+def log():
+    """
+    Provides some stats about Nginx logs stored in MongoDB
+    """
     collection = MongoClient("mongodb://127.0.0.1:27017").logs.nginx
 
     print(f"{collection.count_documents({})} logs")
@@ -16,3 +19,7 @@ if __name__ == "__main__":
 
     status = collection.count_documents({"method": "GET", "path": "/status"})
     print(f"{status} status check")
+
+
+if __name__ == "__main__":
+    log()
